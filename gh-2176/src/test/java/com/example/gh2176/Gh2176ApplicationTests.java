@@ -31,7 +31,9 @@ class Gh2176ApplicationTests {
 
   @Test
   void innerDomainLoading() {
-    InfiniteField.TextField textField = new InfiniteField.TextField("text", "field");
+    InfiniteField.TextField textField = new InfiniteField.TextField();
+    textField.setText("text");
+    textField.setFieldProp("field");
 
     repository.save(textField);
 
