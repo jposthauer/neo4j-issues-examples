@@ -1,18 +1,32 @@
 package com.example.gh2176;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.neo4j.core.schema.Node;
 
-@Getter
-@Setter
-@Node
-public abstract class OuterDomain extends BaseEntity<OuterDomain> {
+@Node(primaryLabel = "OuterDomain")
+public abstract class OuterDomain extends ParentDomain<OuterDomain> {
 
-    @Getter
-    @Setter
-    @Node
-    public static class InnerDomain extends OuterDomain {
-        // constructors
-    }
+  @Node(primaryLabel = "InnerDomainOne")
+  public static class InnerDomainOne extends OuterDomain {
+    // constructors
+  }
+
+  @Node(primaryLabel = "InnerDomainTwo")
+  public static class InnerDomainTwo extends OuterDomain {
+    // constructors
+  }
+
+  @Node(primaryLabel = "InnerDomainThree")
+  public static class InnerDomainThree extends OuterDomain {
+    // constructors
+  }
+
+  @Node(primaryLabel = "InnerDomainFour")
+  public static class InnerDomainFour extends OuterDomain {
+    // constructors
+  }
+
+  @Node(primaryLabel = "InnerDomainFive")
+  public static class InnerDomainFive extends OuterDomain {
+    // constructors
+  }
 }
